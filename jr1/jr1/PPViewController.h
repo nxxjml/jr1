@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPViewController : UIViewController<UIScrollViewDelegate>
+@interface PPViewController : UIViewController<UIScrollViewDelegate,UITableViewDataSource, UITableViewDelegate>
 
 {
     BOOL isFromStart;

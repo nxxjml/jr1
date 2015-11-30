@@ -7,6 +7,7 @@
 //
 
 #import "PPViewController.h"
+#import "AppDelegate.h"
 
 @interface PPViewController ()
 //@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
@@ -56,6 +57,15 @@
     [self loadScrollViewPage:1];
     [self loadScrollViewPage:2];
     [self loadScrollViewPage:3];
+    
+    UITableView* tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 400, self.view.frame.size.width, ImageHeight) style:UITableViewStyleGrouped];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
+    tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
+    
+    
+    
 }
 
 -(void)loadScrollViewPage:(NSInteger)page
@@ -138,6 +148,111 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark Datasource method
+#pragma mark return number of group
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+#pragma mark Return number of rows in section
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString* TableSampleIdentifier = @"TableSampleIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableSampleIdentifier];
+    if (cell == nil ) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableSampleIdentifier];
+    
+    }
+    /*
+    else {
+        while ([cell.contentView.subviews lastObject] != nil) {
+            [(UIView *)[cell.contentView.subviews lastObject] removeFromSuperview];
+        }
+    }*/
+    
+   // NSInteger row = [indexPath row];
+    //cell.imageView.bounds = CGRectMake(0, 0, 20, 20);
+    //cell.detailTextLabel.text = @"detail";
+    NSArray *subT = @[@"改变你的投资方式",@"安心Make Money的理财计划"];
+    NSArray *title = @[@"PP宝",@"MM计划"];
+                      
+    cell.textLabel.text = title[indexPath.section];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.text = subT[indexPath.section];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:10.0f];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    
+    //cell.textLabel.bounds.origin.x = 20.0;
+    CGRect frame = cell.textLabel.frame;
+    NSLog(@"%f,%f,%f,%f",frame.origin.x,frame.origin.y, frame.size.width,frame.size.height);
+    frame.origin.x = 50.0;
+    cell.textLabel.frame = frame;
+    
+    NSString *imgName = [NSString stringWithFormat:@"img%ld.png", (long)[indexPath section]];
+    UIImage *image = [UIImage imageNamed:imgName];
+    cell.imageView.image = image;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  //  NSLog(@"%f,%f,%f,%f",imageView.frame.origin.x,imageView.frame.origin.y, imageView.frame.size.width,imageView.frame.size.height);
+    
+    
+    //CGRect cellFrame = [cell frame];
+    //cellFrame.origin = CGPointMake(0, 0);
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 0) {
+        return 50.0;
+    }
+    else if ([indexPath section] == 1) {
+    return 50.0;
+    }
+    else {
+        return 50.0;
+    }
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 10.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 10.0;
+}
+#pragma mark return head title of section
+- (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSArray *projName = @[@"PP", @"MM"];
+    return  projName[section];
+}
+/*
+#pragma mark return foot title of section
+- (NSString*) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    return @"MM";
+}*/
+
+/*- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
+    return 20.0;
+    
+}
+*/
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    UITabBarController *tabViewController = (UITabBarController*) appDelegate.window.rootViewController;
+    NSInteger index = [indexPath section] +1;
+    [tabViewController setSelectedIndex:index];
+    NSLog(@"%ld", index);
+    
+}
+
 
 /*
 #pragma mark - Navigation

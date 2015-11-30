@@ -5,17 +5,26 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--用户中心-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1TQ-Pb-hC8"/>
+                <viewController id="BYZ-38-t0r" customClass="PCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="swe-ra-6d5"/>
+                        <viewControllerLayoutGuide type="bottom" id="J2o-Rt-Z0A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h9w-7U-PVp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="用户中心" id="1TQ-Pb-hC8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1715" y="134"/>
         </scene>
-        <!--Item-->
+        <!--主页-->
         <scene sceneID="sCD-64-Czq">
             <objects>
                 <viewController id="2jR-RK-m8K" customClass="PPViewController" sceneMemberID="viewController">
@@ -39,16 +48,16 @@
                             <constraint firstItem="Gtb-pf-BUL" firstAttribute="top" secondItem="xfi-dh-DhK" secondAttribute="bottom" constant="124" id="xwQ-R9-vBQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="cHB-Je-cvv"/>
+                    <tabBarItem key="tabBarItem" title="主页" image="logo" id="cHB-Je-cvv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8t-kI-vPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2362" y="134"/>
         </scene>
-        <!--Item-->
+        <!--MM计划-->
         <scene sceneID="6KT-VA-cza">
             <objects>
-                <viewController id="Jfi-W8-MqK" sceneMemberID="viewController">
+                <viewController id="Jfi-W8-MqK" customClass="MMViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bKK-PI-3s0"/>
                         <viewControllerLayoutGuide type="bottom" id="Yl5-nb-qjA"/>
@@ -58,16 +67,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="8W7-My-ZWR"/>
+                    <tabBarItem key="tabBarItem" title="MM计划" image="img1" id="8W7-My-ZWR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfp-B1-Uxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2362" y="795"/>
         </scene>
-        <!--Item-->
+        <!--PP宝-->
         <scene sceneID="ejL-lG-Cdx">
             <objects>
-                <viewController id="6EL-xl-oqF" sceneMemberID="viewController">
+                <viewController id="6EL-xl-oqF" customClass="PPBViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QRl-6W-Y2g"/>
                         <viewControllerLayoutGuide type="bottom" id="d0p-Gg-m9o"/>
@@ -77,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="DM3-S5-CdQ"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="PP宝" image="img0" id="DM3-S5-CdQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoZ-Ai-Dht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,10 +102,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="zMN-jK-IJN"/>
                         <segue destination="2jR-RK-m8K" kind="relationship" relationship="viewControllers" id="R1U-10-WHe"/>
                         <segue destination="6EL-xl-oqF" kind="relationship" relationship="viewControllers" id="MUw-dT-Syp"/>
                         <segue destination="Jfi-W8-MqK" kind="relationship" relationship="viewControllers" id="Get-nd-tLn"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bEo-2Q-wcB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uyq-Wk-afj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,4 +113,9 @@
             <point key="canvasLocation" x="903" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img0" width="22" height="12"/>
+        <image name="img1" width="41" height="11"/>
+        <image name="logo" width="34" height="34"/>
+    </resources>
 </document>
