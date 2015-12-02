@@ -11,6 +11,10 @@
 @interface JRTableViewCell : UITableViewCell
 #pragma mark 单元格高度
 @property (assign, nonatomic) CGFloat height;
+@property (retain, nonatomic) IBOutlet UILabel *dateLable;
+@property (retain, nonatomic) IBOutlet UILabel *numLable;
+@property (retain, nonatomic) IBOutlet UILabel *amountLable;
+@property (retain, nonatomic) IBOutlet UILabel *rateLable;
 
 
 @end

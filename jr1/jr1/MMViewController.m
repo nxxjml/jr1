@@ -49,7 +49,21 @@
     [self.view addSubview:viewBtn];
     [self.view addSubview:recordsBtn];
     
+    [viewBtn addTarget:self action:@selector(showProductsView:) forControlEvents:UIControlEventTouchUpInside];
+    [recordsBtn addTarget:self action:@selector(showRecordsView:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
+
+
+- (void)showProductsView:(id)sender {
+//    UIButton *btn = (UIButton*) sender;
+    [self performSegueWithIdentifier:@"showProducts" sender:sender];
+}
+
+- (void)showRecordsView:(id)sender {
+    [self performSegueWithIdentifier:@"showRecords" sender:sender];
+}
+
 
 
 - (void)didReceiveMemoryWarning {
