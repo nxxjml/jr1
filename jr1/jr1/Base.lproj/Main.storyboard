@@ -64,7 +64,6 @@
         <!--MM计划系列产品-->
         <scene sceneID="cqA-Oe-b2C">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rQR-wq-ynR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="MM计划系列产品" id="Z9r-Ko-6Dy" customClass="ProductsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e9b-ZY-ddr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -157,9 +156,9 @@
                     <connections>
                         <outlet property="tableView" destination="FiS-ku-wEt" id="18X-WR-xsa"/>
                         <segue destination="CAO-Cd-HMd" kind="push" identifier="productDetailSegue" id="gMz-IS-R9n"/>
-                        <segue destination="Urv-8T-KqM" kind="push" identifier="testSegue" id="JEp-a5-kEH"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQR-wq-ynR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2657.5" y="341.5"/>
         </scene>
@@ -172,30 +171,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HRs-sF-IOv"/>
+                    <navigationItem key="navigationItem" id="HRs-sF-IOv">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="pCg-xp-IlZ"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIj-yQ-xtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3146.5" y="340.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ic1-Wu-8nb">
-            <objects>
-                <viewController id="Urv-8T-KqM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uS0-a5-AKO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="bsA-cX-Eee"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9wp-zy-Xo2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3316.5" y="-406.5"/>
         </scene>
         <!--MM计划交易记录-->
         <scene sceneID="F0W-fR-d6R">
@@ -211,7 +195,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordsCell" id="Rhx-a4-6OO" customClass="JRTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="335" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rhx-a4-6OO" id="nrd-bo-EZ0">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
