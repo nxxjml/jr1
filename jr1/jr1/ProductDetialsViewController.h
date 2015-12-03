@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailTableViewCell.h"
 
-@interface ProductDetialsViewController : UIViewController
+@interface ProductDetialsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@property (retain, nonatomic) UITextField *investAmoutTextField;
 
 @end
