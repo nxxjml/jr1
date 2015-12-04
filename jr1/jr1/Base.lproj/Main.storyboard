@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="用户中心" id="1TQ-Pb-hC8"/>
+                    <tabBarItem key="tabBarItem" title="用户中心" image="img3" id="1TQ-Pb-hC8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +195,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordsCell" id="Rhx-a4-6OO" customClass="JRTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rhx-a4-6OO" id="nrd-bo-EZ0">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
@@ -267,7 +267,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="PP宝" image="img0" id="DM3-S5-CdQ"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="PP宝" image="img1" id="DM3-S5-CdQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoZ-Ai-Dht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,7 +297,7 @@
         <scene sceneID="NNM-Ef-g05">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gla-qh-rXG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MM计划" image="img1" id="8W7-My-ZWR"/>
+                    <tabBarItem key="tabBarItem" title="MM计划" image="img2" id="8W7-My-ZWR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e7Z-dl-yi2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -314,8 +314,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="img0" width="22" height="12"/>
-        <image name="img1" width="41" height="11"/>
-        <image name="logo" width="34" height="34"/>
+        <image name="img1" width="22" height="12"/>
+        <image name="img2" width="41" height="11"/>
+        <image name="img3" width="22" height="22"/>
+        <image name="logo" width="27" height="30"/>
     </resources>
 </document>

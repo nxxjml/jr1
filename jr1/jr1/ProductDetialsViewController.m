@@ -61,7 +61,7 @@
     
 #pragma mark 设置detail view
     _viewArray = [[NSArray alloc] initWithObjects:[[UIView alloc] init], [[UIView alloc] init], [[UIView alloc] init], [[UIView alloc] init], nil];
-    UIFont *labelFont = [UIFont systemFontOfSize:16];
+    UIFont *labelFont = [UIFont systemFontOfSize:14];
     
 //    UILabel *limitLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 90, 115, 20)];
 //    limitLabel.text = @"总额度";
@@ -127,8 +127,10 @@
     [_subView1 addSubview:_investAmoutTextField];
     [self.view addSubview:_subView1];
     
-    [_subView2 addSubview:_investAmoutTextField];
+    //[_subView2 addSubview:_investAmoutTextField];
     [self.view addSubview:_subView2];
+    [self.view addSubview:_subView3];
+    [self.view addSubview:_subView4];
     
   
     
@@ -151,18 +153,59 @@
     tableView1.dataSource = self;
     [_subView2 addSubview:tableView1];
     
+#pragma mark subview3
+    UITableView *tableView2 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [tableView2 setTag:2];
+    tableView2.delegate = self;
+    tableView2.dataSource = self;
+    UILabel *numTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 95, 20)];
+    UILabel *numDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 10, 135, 20)];
+    UILabel *introTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 50, 95, 20)];
+    UILabel *picTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 90, 95, 20)];
+    
+    UIButton *introBtn = [[UIButton alloc] initWithFrame:CGRectMake(130, 50, 100, 20)];
+    UIButton *picBtn = [[UIButton alloc] initWithFrame:CGRectMake(130, 90, 100, 20)];
+    
+    numTitleLabel.text = @"项目编号";
+    numDataLabel.text = @"MM-1111111155-6M";
+    introTitleLabel.text = @"项目介绍";
+    picTitleLabel.text = @"项目图片";
+    
+    [introBtn setTitle:@"点击查看" forState:UIControlStateNormal];
+    [introBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    introBtn.backgroundColor = [UIColor lightGrayColor];
+    [picBtn setTitle:@"点击查看" forState:UIControlStateNormal];
+    [picBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    picBtn.backgroundColor = [UIColor lightGrayColor];
+    //[_subView3 addSubview:tableView2];
+//    [_subView3 insertSubview:btn1 atIndex:1];
+    [_subView3 addSubview:numTitleLabel];
+    [_subView3 addSubview:numDataLabel];
+    [_subView3 addSubview:introTitleLabel];
+    [_subView3 addSubview:picTitleLabel];
+    [_subView3 addSubview:introBtn];
+    [_subView3 addSubview:picBtn];
+    
+#pragma mark subview3
+    UITableView *tableView3 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [tableView3 setTag:3];
+    tableView3.delegate = self;
+    tableView3.dataSource = self;
+    [_subView4 addSubview:tableView3];
+    
     
     
     [segmentControl addTarget:self action:@selector(segmentTurn:) forControlEvents:UIControlEventValueChanged];
     [_subView1 setHidden:NO];
     [_subView2 setHidden:YES];
-
+    [_subView3 setHidden:YES];
+    [_subView4 setHidden:YES];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (tableView.tag ==1) {
         NSLog(@"this is first tableView");
-    }else {
-        NSLog(@"this is not the first tableView");
+    }else if (tableView.tag == 2){
+        NSLog(@"this is the second tableView");
     }
     return 1;
 }
@@ -170,11 +213,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger num = 0;
     if (tableView.tag == 1) {
-        NSLog(@"number of tableView1 is 3");
+        
         num = 3;
     } else {
-        num = 2;
+        num = 3;
     }
+    NSLog(@"row number of tableview is %ld", num);
     return num;
 }
 
@@ -185,14 +229,46 @@
     if (cell == nil) {
          cell = [[DetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"detailCell"];
     }
-    NSArray *itemArray1 = [[NSArray alloc] initWithArray:@[@[@"计划编号",@"MM-1111111155-6M"], @[@"年化收益率", @"12.0%"], @[@"募集开始日期", @"2015-12-02"]]];
-    cell.lLabel.text = itemArray1[indexPath.row][0];
-    cell.mLabel.text = itemArray1[indexPath.row][1];
+    switch (tableView.tag) { //
+        case 1: {
+            //NSArray *itemArray1 = [[NSArray alloc] initWithArray:@[@[@"计划编号",@"MM-1111111155-6M"], @[@"年化收益率", @"12.0%"], @[@"募集开始日期", @"2015-12-02"]]]; // items for subview2
+            NSArray *itemArray = [[NSArray alloc] initWithArray:@[@[@"计划编号",@"MM-1111111155-6M"], @[@"年化收益率", @"12.0%"], @[@"募集开始日期", @"2015-12-02"]]];
+            cell.lLabel.text = itemArray[indexPath.row][0];
+            cell.mLabel.text = itemArray[indexPath.row][1];
+            [itemArray release];
+            break;
+        }
+        case 2: {
+            //NSArray *itemArray1 = [[NSArray alloc] initWithArray:@[@[@"计划编号",@"MM-1111111155-6M"], @[@"年化收益率", @"12.0%"], @[@"募集开始日期", @"2015-12-02"]]]; // items for subview2
+            NSArray *itemArray = [[NSArray alloc] initWithArray:@[@[@"项目编号",@"MM-1111111155-6M"], @[@"项目介绍", @""], @[@"项目图片", @""]]];
+            cell.lLabel.text = itemArray[indexPath.row][0];
+            cell.mLabel.text = itemArray[indexPath.row][1];
+            [itemArray release];
+            break;
+        }
+        case 3: {
+            //NSArray *itemArray1 = [[NSArray alloc] initWithArray:@[@[@"计划编号",@"MM-1111111155-6M"], @[@"年化收益率", @"12.0%"], @[@"募集开始日期", @"2015-12-02"]]]; // items for subview2
+            NSArray *itemArray = [[NSArray alloc] initWithArray:@[@[@"投资人",@"加入时间", @"加入金额"], @[@"rjiihl8", @"2015-12-04", @"200.00"], @[@"12293842304", @"2015-12-02", @"100000.00"]]];
+            cell.lLabel.text = itemArray[indexPath.row][0];
+            cell.mLabel.text = itemArray[indexPath.row][1];
+            cell.rLabel.text = itemArray[indexPath.row][2];
+            [itemArray release];
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
+
+    
+    
     return cell;
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [_investAmoutTextField resignFirstResponder];
 }
+
 
 - (void) segmentTurn:(UISegmentedControl *) seg {
     NSInteger index = seg.selectedSegmentIndex;
