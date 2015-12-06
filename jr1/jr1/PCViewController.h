@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PcDetailsViewController.h"
 
-@interface PCViewController : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+
+
+@interface PCViewController : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate, NSURLConnectionDataDelegate>
 
 @property(nonatomic, strong) UIScrollView *scrollView;
 

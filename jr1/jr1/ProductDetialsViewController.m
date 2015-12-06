@@ -36,7 +36,7 @@
 //    labelSize = [labelText sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
 #pragma mark UILabel自动换行
      labelSize = [labelText boundingRectWithSize:CGSizeMake(120, 500) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]} context:nil].size;
-    NSLog(@"w=%f,h=%f", labelSize.width, labelSize.height);
+//    NSLog(@"w=%f,h=%f", labelSize.width, labelSize.height);
     label.frame = CGRectMake(label.frame.origin.x, label.frame.origin.y, 120, labelSize.height);
                                                                                                                                          
     label.backgroundColor = [UIColor lightGrayColor];
@@ -202,11 +202,11 @@
     [_subView4 setHidden:YES];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (tableView.tag ==1) {
-        NSLog(@"this is first tableView");
-    }else if (tableView.tag == 2){
-        NSLog(@"this is the second tableView");
-    }
+//    if (tableView.tag ==1) {
+//        NSLog(@"this is first tableView");
+//    }else if (tableView.tag == 2){
+//        NSLog(@"this is the second tableView");
+//    }
     return 1;
 }
 
@@ -218,7 +218,7 @@
     } else {
         num = 3;
     }
-    NSLog(@"row number of tableview is %ld", num);
+//    NSLog(@"row number of tableview is %ld", num);
     return num;
 }
 

@@ -165,11 +165,11 @@
 -(void)scrollPages{
     ++self.pageControl.currentPage;
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
-    NSLog(@"pageWidth = %f", pageWidth);
+//    NSLog(@"pageWidth = %f", pageWidth);
     if (isFromStart) {
         [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
         self.pageControl.currentPage = 0;
-        NSLog(@"From start!");
+//        NSLog(@"From start!");
     }
     else
     {
@@ -219,8 +219,8 @@
    // NSInteger row = [indexPath row];
     //cell.imageView.bounds = CGRectMake(0, 0, 20, 20);
     //cell.detailTextLabel.text = @"detail";
-    NSArray *subT = @[@"改变你的投资方式",@"安心Make Money的理财计划"];
-    NSArray *title = @[@"PP宝",@"MM计划"];
+    NSArray *subT = @[@"改变你的投资方式", @"安心Make Money的理财计划"];
+    NSArray *title = @[@"PP宝", @"MM计划"];
                       
     cell.textLabel.text = title[indexPath.section];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:20.0f];
@@ -231,11 +231,12 @@
     
     //cell.textLabel.bounds.origin.x = 20.0;
     CGRect frame = cell.textLabel.frame;
-    NSLog(@"%f,%f,%f,%f",frame.origin.x,frame.origin.y, frame.size.width,frame.size.height);
+//    NSLog(@"%f,%f,%f,%f",frame.origin.x,frame.origin.y, frame.size.width,frame.size.height);
     frame.origin.x = 50.0;
     cell.textLabel.frame = frame;
+    NSInteger section = [indexPath section];
     
-    NSString *imgName = [NSString stringWithFormat:@"img%ld.png", (long)[indexPath section]];
+    NSString *imgName = [NSString stringWithFormat:@"img%ld.png", section + 1];
     UIImage *image = [UIImage imageNamed:imgName];
     cell.imageView.image = image;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

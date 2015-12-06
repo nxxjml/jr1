@@ -9,6 +9,9 @@
 #import "PCViewController.h"
 
 @interface PCViewController ()
+@property (retain) UIViewController *recharegViewController;
+@property (retain) NSMutableData *receivedData;
+@property (retain, nonatomic) NSArray *bcTitle;
 
 @end
 
@@ -113,6 +116,12 @@
     [_scrollView addSubview:btnViw];
     [_scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 120 + tableView.contentSize.height + btnViw.frame.size.height)];
     NSLog(@"scrollview height = %f", _scrollView.contentSize.height);
+    UIBarButtonItem *tmpItem = [[UIBarButtonItem alloc] init];
+    tmpItem.title = @"返回";
+    self.navigationItem.backBarButtonItem  = tmpItem;
+    
+    
+    
     
 }
 
@@ -163,9 +172,10 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:TbViewCellIdent];
     }
-    NSArray *tbcTitle = @[@[@"账户充值",@"账户提现",@"我的银行卡",@"账户资产"],@[@"交易记录",@"消息通知"],@[@"个人信息",@"安全设置"],@[@"常见问题",@"访问论坛",@"联系我们"]];
-    cell.textLabel.text = tbcTitle[indexPath.section][indexPath.row];
+    _bcTitle = [[NSArray alloc] initWithArray: @[@[@"账户充值",@"账户提现",@"我的银行卡",@"账户资产"],@[@"交易记录",@"消息通知"],@[@"个人信息",@"安全设置"],@[@"常见问题",@"访问论坛",@"联系我们"]]];
+    cell.textLabel.text = _bcTitle[indexPath.section][indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     return cell;
     
 }
@@ -176,6 +186,27 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10.0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _recharegViewController = [[UIViewController alloc] init];
+   
+//    textTitle.text = @"mm计划项目";
+    [self performSegueWithIdentifier:@"pcDetailSegue" sender:indexPath];
+   
+    
+    //[self presentModalViewController:_recharegViewController animated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PcDetailsViewController *destVc = segue.destinationViewController;
+    NSIndexPath *indexPath = (NSIndexPath *)sender;
+    NSArray *titleArray = _bcTitle;
+//    NSLog(@"indexpath.section is %ld, indexpath.row is %ld, number of titleArray is %ld", indexPath.section, indexPath.row, [titleArray count]);
+    NSLog(@"%@", _bcTitle[indexPath.row]);
+//    destVc.pageTitle.text = titleArray[indexPath.section][indexPath.row];
+    [destVc.pageTitle setText:@"from segue"];
+    destVc.navigationItem.title = titleArray[indexPath.section][indexPath.row];
 }
 
 
@@ -219,6 +250,17 @@
         action.enabled = lisen.text.length >= 6;
     }
 }
+
+
+//
+//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+//    [self.receivedData setLength:0];
+//}
+//
+//- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+//    [self.receivedData appendData:data]; //可能多次收到数据，把新的数据添加在现有数据最后
+//}
+
 /*
 #pragma mark - Navigation
 
