@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C300CAE01C09EA7F00CE5DCB /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C300CADF1C09EA7F00CE5DCB /* MMViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C3072C271C1476E300BEB85A /* PcDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3072C261C1476E300BEB85A /* PcDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C3072C381C14893B00BEB85A /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = C3072C331C14893B00BEB85A /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
+		C3072C391C14893B00BEB85A /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C3072C351C14893B00BEB85A /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
+		C3072C3A1C14893B00BEB85A /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C3072C371C14893B00BEB85A /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
 		C340F05F1C0A84F00037F738 /* PCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C340F05E1C0A84F00037F738 /* PCViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C387A19A1BEE29F800AFC511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C387A1991BEE29F800AFC511 /* main.m */; };
 		C387A19D1BEE29F800AFC511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C387A19C1BEE29F800AFC511 /* AppDelegate.m */; };
@@ -19,9 +22,6 @@
 		C387A1B31BEE29F800AFC511 /* jr1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C387A1B21BEE29F800AFC511 /* jr1Tests.m */; };
 		C387A1BE1BEE29F800AFC511 /* jr1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C387A1BD1BEE29F800AFC511 /* jr1UITests.m */; };
 		C3A1EE6B1C13035A002A34BE /* DataLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1EE6A1C13035A002A34BE /* DataLoadOperation.m */; settings = {ASSET_TAGS = (); }; };
-		C3A1EE721C130CCD002A34BE /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1EE6D1C130CCD002A34BE /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
-		C3A1EE731C130CCD002A34BE /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1EE6F1C130CCD002A34BE /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
-		C3A1EE741C130CCD002A34BE /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1EE711C130CCD002A34BE /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
 		C3A1EE771C130D1A002A34BE /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A1EE761C130D1A002A34BE /* libxml2.2.tbd */; };
 		C3A1EE7C1C131450002A34BE /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1EE7B1C131450002A34BE /* HTMLParser.m */; settings = {ASSET_TAGS = (); }; };
 		C3AE93DC1C09CF8A009FD65C /* JRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE93DB1C09CF8A009FD65C /* JRTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -57,6 +57,12 @@
 		C300CADF1C09EA7F00CE5DCB /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		C3072C251C1476E300BEB85A /* PcDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcDetailsViewController.h; sourceTree = "<group>"; };
 		C3072C261C1476E300BEB85A /* PcDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PcDetailsViewController.m; sourceTree = "<group>"; };
+		C3072C321C14893B00BEB85A /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		C3072C331C14893B00BEB85A /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		C3072C341C14893B00BEB85A /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		C3072C351C14893B00BEB85A /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		C3072C361C14893B00BEB85A /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		C3072C371C14893B00BEB85A /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		C340F05D1C0A84F00037F738 /* PCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCViewController.h; sourceTree = "<group>"; };
 		C340F05E1C0A84F00037F738 /* PCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCViewController.m; sourceTree = "<group>"; };
 		C387A1951BEE29F800AFC511 /* jr1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jr1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,12 +83,6 @@
 		C387A1BF1BEE29F800AFC511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3A1EE691C13035A002A34BE /* DataLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoadOperation.h; sourceTree = "<group>"; };
 		C3A1EE6A1C13035A002A34BE /* DataLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoadOperation.m; sourceTree = "<group>"; };
-		C3A1EE6C1C130CCD002A34BE /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = ../hpple/Pod/Classes/TFHpple.h; sourceTree = "<group>"; };
-		C3A1EE6D1C130CCD002A34BE /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHpple.m; path = ../hpple/Pod/Classes/TFHpple.m; sourceTree = "<group>"; };
-		C3A1EE6E1C130CCD002A34BE /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHppleElement.h; path = ../hpple/Pod/Classes/TFHppleElement.h; sourceTree = "<group>"; };
-		C3A1EE6F1C130CCD002A34BE /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHppleElement.m; path = ../hpple/Pod/Classes/TFHppleElement.m; sourceTree = "<group>"; };
-		C3A1EE701C130CCD002A34BE /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPathQuery.h; path = ../hpple/Pod/Classes/XPathQuery.h; sourceTree = "<group>"; };
-		C3A1EE711C130CCD002A34BE /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathQuery.m; path = ../hpple/Pod/Classes/XPathQuery.m; sourceTree = "<group>"; };
 		C3A1EE761C130D1A002A34BE /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		C3A1EE7A1C131450002A34BE /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
 		C3A1EE7B1C131450002A34BE /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
@@ -150,7 +150,6 @@
 				C387A1B11BEE29F800AFC511 /* jr1Tests */,
 				C387A1BC1BEE29F800AFC511 /* jr1UITests */,
 				C387A1961BEE29F800AFC511 /* Products */,
-				C3A1EE751C130CDA002A34BE /* hpple */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +166,12 @@
 		C387A1971BEE29F800AFC511 /* jr1 */ = {
 			isa = PBXGroup;
 			children = (
+				C3072C321C14893B00BEB85A /* TFHpple.h */,
+				C3072C331C14893B00BEB85A /* TFHpple.m */,
+				C3072C341C14893B00BEB85A /* TFHppleElement.h */,
+				C3072C351C14893B00BEB85A /* TFHppleElement.m */,
+				C3072C361C14893B00BEB85A /* XPathQuery.h */,
+				C3072C371C14893B00BEB85A /* XPathQuery.m */,
 				C3F4CD901C0E9A050092215D /* MM */,
 				C387A19B1BEE29F800AFC511 /* AppDelegate.h */,
 				C387A19C1BEE29F800AFC511 /* AppDelegate.m */,
@@ -211,19 +216,6 @@
 				C387A1BF1BEE29F800AFC511 /* Info.plist */,
 			);
 			path = jr1UITests;
-			sourceTree = "<group>";
-		};
-		C3A1EE751C130CDA002A34BE /* hpple */ = {
-			isa = PBXGroup;
-			children = (
-				C3A1EE6C1C130CCD002A34BE /* TFHpple.h */,
-				C3A1EE6D1C130CCD002A34BE /* TFHpple.m */,
-				C3A1EE6E1C130CCD002A34BE /* TFHppleElement.h */,
-				C3A1EE6F1C130CCD002A34BE /* TFHppleElement.m */,
-				C3A1EE701C130CCD002A34BE /* XPathQuery.h */,
-				C3A1EE711C130CCD002A34BE /* XPathQuery.m */,
-			);
-			name = hpple;
 			sourceTree = "<group>";
 		};
 		C3F4CD901C0E9A050092215D /* MM */ = {
@@ -391,19 +383,19 @@
 				C3F4CD8C1C0DD62C0092215D /* RecordsViewController.m in Sources */,
 				C387A1A01BEE29F800AFC511 /* ViewController.m in Sources */,
 				C300CAE01C09EA7F00CE5DCB /* MMViewController.m in Sources */,
+				C3072C391C14893B00BEB85A /* TFHppleElement.m in Sources */,
 				C3AE93DC1C09CF8A009FD65C /* JRTableViewCell.m in Sources */,
 				C3AE93DF1C09D368009FD65C /* PPBViewController.m in Sources */,
-				C3A1EE731C130CCD002A34BE /* TFHppleElement.m in Sources */,
 				C3072C271C1476E300BEB85A /* PcDetailsViewController.m in Sources */,
 				C3F4CD961C0ED1A70092215D /* ProductDetialsViewController.m in Sources */,
 				C3A1EE6B1C13035A002A34BE /* DataLoadOperation.m in Sources */,
-				C3A1EE721C130CCD002A34BE /* TFHpple.m in Sources */,
+				C3072C381C14893B00BEB85A /* TFHpple.m in Sources */,
+				C3072C3A1C14893B00BEB85A /* XPathQuery.m in Sources */,
 				C387A19D1BEE29F800AFC511 /* AppDelegate.m in Sources */,
 				C3A1EE7C1C131450002A34BE /* HTMLParser.m in Sources */,
 				C387A19A1BEE29F800AFC511 /* main.m in Sources */,
 				C340F05F1C0A84F00037F738 /* PCViewController.m in Sources */,
 				C3F4CD8F1C0E99F10092215D /* ProductTableViewCell.m in Sources */,
-				C3A1EE741C130CCD002A34BE /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
