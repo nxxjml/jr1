@@ -15,7 +15,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MwM-AS-hG0"/>
                     <connections>
-                        <segue destination="fDX-Th-aay" kind="push" identifier="pcDetailSegue" id="6K4-1m-ucI"/>
+                        <segue destination="fDX-Th-aay" kind="push" identifier="pcDetailSegue" id="loj-Mg-0Kh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -25,6 +25,7 @@
         <!--Pc Details View Controller-->
         <scene sceneID="ysa-B7-ru8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFy-CH-EBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fDX-Th-aay" customClass="PcDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VVl-4m-AKO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -33,7 +34,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="hJM-hR-LKe"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QFy-CH-EBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1863" y="-208"/>
         </scene>

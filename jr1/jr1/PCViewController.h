@@ -14,5 +14,6 @@
 @interface PCViewController : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate, NSURLConnectionDataDelegate>
 
 @property(nonatomic, strong) UIScrollView *scrollView;
+@property(nonatomic, strong) UITableView *tableView;
 
 @end

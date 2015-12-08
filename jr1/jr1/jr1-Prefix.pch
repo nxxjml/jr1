@@ -1,0 +1,23 @@
+//
+//  jr1-Prefix.pch
+//  jr1
+//
+//  Created by simao on 15/12/7.
+//  Copyright © 2015年 simao. All rights reserved.
+//
+
+#ifndef jr1_Prefix_pch
+#define jr1_Prefix_pch
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <SystmeConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+#endif
+
+#import "AFNetworking.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* jr1_Prefix_pch */

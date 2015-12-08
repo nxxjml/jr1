@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TFHpple.h"
-#import "TFHppleElement.h"
-#import "XPathQuery.h"
+#import "AFNetworking.h"
+//#import "TFHpple.h"
+//#import "TFHppleElement.h"
+//#import "XPathQuery.h"
 
 @interface PcDetailsViewController : UIViewController<NSURLSessionDataDelegate>
-@property (retain, nonatomic) UILabel *pageTitle;
+@property (retain, strong) UILabel *pageTitle;
+@property (copy, nonatomic, readwrite) NSString *pageTitleText;
 @property (retain, nonatomic) UILabel *pageContent;
+@property (copy, nonatomic) NSString *pageContentText;
 @property (retain) NSMutableData *receivedData;
+@property (retain, nonatomic) NSDictionary *dict;
+
 
 @end

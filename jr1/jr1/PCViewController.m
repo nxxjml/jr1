@@ -81,24 +81,24 @@
     //[totalPropertyNum sizeToFit];
     [_scrollView addSubview:avilablePropNum];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height - 120) style:UITableViewStyleGrouped];
-    tableView.delegate = self;
-    tableView.dataSource = self;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height - 120) style:UITableViewStyleGrouped];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
    // [_scrollView addSubview:tableView];
-    tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
-    tableView.scrollEnabled = NO;
+    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+    _tableView.scrollEnabled = NO;
     
-    CGRect frame = tableView.frame;
-    NSLog(@"content height = %f, frame height = %f",tableView.frame.size.height, tableView.contentSize.height);
-    frame.size.height = tableView.contentSize.height;
-    tableView.frame = frame;
+    CGRect frame = _tableView.frame;
+    NSLog(@"content height = %f, frame height = %f",_tableView.frame.size.height, _tableView.contentSize.height);
+    frame.size.height = _tableView.contentSize.height;
+    _tableView.frame = frame;
     
      NSLog(@"scrollview height = %f", _scrollView.contentSize.height);
-    [_scrollView addSubview:tableView];
+    [_scrollView addSubview:_tableView];
    // [_scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 120 + tableView.contentSize.height)];  // update contentSize of scrollView!!
     
 #pragma mark exit button
-    UIView *btnViw = [[UIView alloc] initWithFrame:CGRectMake(0, 120 + tableView.contentSize.height, self.view.frame.size.width, 30)];
+    UIView *btnViw = [[UIView alloc] initWithFrame:CGRectMake(0, 120 + _tableView.contentSize.height, self.view.frame.size.width, 30)];
 //    UIButton *exitBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 120 + tableView.contentSize.height, 200, 40)];
 //    UIButton *exitBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width /2 -100, 125 + tableView.contentSize.height, 200, 20)];
 
@@ -114,7 +114,7 @@
     //[exitBtn sizeToFit];
     [btnViw addSubview:exitBtn];
     [_scrollView addSubview:btnViw];
-    [_scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 120 + tableView.contentSize.height + btnViw.frame.size.height)];
+    [_scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 120 + _tableView.contentSize.height + btnViw.frame.size.height)];
     NSLog(@"scrollview height = %f", _scrollView.contentSize.height);
     UIBarButtonItem *tmpItem = [[UIBarButtonItem alloc] init];
     tmpItem.title = @"返回";
@@ -189,23 +189,29 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    _recharegViewController = [[UIViewController alloc] init];
+    //_recharegViewController = [[UIViewController alloc] init];
    
 //    textTitle.text = @"mm计划项目";
-    [self performSegueWithIdentifier:@"pcDetailSegue" sender:indexPath];
+    [self performSegueWithIdentifier:@"pcDetailSegue" sender:self.view];
    
     
     //[self presentModalViewController:_recharegViewController animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PcDetailsViewController *destVc = segue.destinationViewController;
-    NSIndexPath *indexPath = (NSIndexPath *)sender;
+    PcDetailsViewController *destVc = (PcDetailsViewController *)segue.destinationViewController;
+//    NSIndexPath *indexPath = (NSIndexPath *)sender;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSArray *titleArray = _bcTitle;
 //    NSLog(@"indexpath.section is %ld, indexpath.row is %ld, number of titleArray is %ld", indexPath.section, indexPath.row, [titleArray count]);
-    NSLog(@"%@", _bcTitle[indexPath.row]);
+//    NSLog(@"bctitle is %@", _bcTitle[indexPath.row]);
 //    destVc.pageTitle.text = titleArray[indexPath.section][indexPath.row];
-    [destVc.pageTitle setText:@"from segue"];
+    destVc.pageTitleText= titleArray[indexPath.section][indexPath.row];
+    destVc.pageTitle.backgroundColor = [UIColor redColor];
+    
+//    [destVc setValue:@"from segue" forKey:@"pageTitleText"];
+    //destVc.pageText.text = @"from segue";
     destVc.navigationItem.title = titleArray[indexPath.section][indexPath.row];
 }
 
